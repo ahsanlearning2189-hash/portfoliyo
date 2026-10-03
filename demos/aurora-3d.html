@@ -1,0 +1,5 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="demo.css"><title>Aurora</title></head><body><p class="top"><a href="../index.php#projects">← Back to portfolio</a><small>Demo</small></p>
+<h1>Aurora</h1><p>Hover the card. It follows your cursor in 3D.</p>
+<style>.w{perspective:900px;display:grid;place-items:center;height:380px}.t{width:300px;padding:34px;border-radius:22px;background:linear-gradient(135deg,#8b5cff,#22e3ff);color:#05070f;transition:transform .15s;transform-style:preserve-3d;box-shadow:0 30px 60px -20px #22e3ff88}.t h2{margin:0;transform:translateZ(50px)}.t p{transform:translateZ(30px)}</style>
+<div class="w" id="w"><div class="t" id="t"><h2>Aurora One</h2><p>Light, fast, and made for people who ship.</p></div></div>
+<script>w.onmousemove=e=>{const r=t.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;t.style.transform=`rotateY(${x*25}deg) rotateX(${-y*25}deg)`};w.onmouseleave=()=>t.style.transform=''</script></body></html>

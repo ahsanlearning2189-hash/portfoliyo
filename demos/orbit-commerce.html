@@ -1,0 +1,5 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="demo.css"><title>Orbit Commerce</title></head><body><p class="top"><a href="../index.php#projects">← Back to portfolio</a><small>Demo</small></p>
+<h1>Orbit Commerce</h1><p>Cart total: <b id="t">$0</b> · Items: <b id="n">0</b> <button onclick="cart=[];r()">Clear</button></p><div class="g" id="g"></div>
+<script>const P=[['Mechanical Keyboard',89],['4K Monitor',329],['USB-C Hub',39],['Wireless Mouse',49],['Desk Lamp',29],['Webcam HD',59]];let cart=JSON.parse(localStorage.oc||'[]');
+g.innerHTML=P.map((p,i)=>`<div class="c"><h3>${p[0]}</h3><p>$${p[1]}</p><button onclick="cart.push(${i});r()">Add to cart</button></div>`).join('');
+function r(){localStorage.oc=JSON.stringify(cart);n.textContent=cart.length;t.textContent='$'+cart.reduce((s,i)=>s+P[i][1],0)}r()</script></body></html>

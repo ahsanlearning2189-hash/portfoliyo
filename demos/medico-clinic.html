@@ -1,0 +1,6 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="demo.css"><title>Medico Clinic Manager</title></head><body><p class="top"><a href="../index.php#projects">← Back to portfolio</a><small>Demo</small></p>
+<h1>Medico Clinic Manager</h1><div class="row"><input id="n" placeholder="Patient name"><input id="a" type="number" placeholder="Age" style="width:90px"><select id="dr"><option>Dr. Khan</option><option>Dr. Ali</option><option>Dr. Noor</option></select><button onclick="p()">Add patient</button><input id="q" placeholder="Search" oninput="r()"></div>
+<table><tr><th>Patient</th><th>Age</th><th>Doctor</th><th></th></tr><tbody id="l"></tbody></table>
+<script>let P=JSON.parse(localStorage.mc||'[{"n":"Ayesha Noor","a":34,"d":"Dr. Khan"},{"n":"Bilal Ahmed","a":52,"d":"Dr. Ali"}]');
+function r(){localStorage.mc=JSON.stringify(P);l.innerHTML=P.map((x,k)=>x.n.toLowerCase().includes(q.value.toLowerCase())?`<tr><td>${x.n.replace(/</g,'&lt;')}</td><td>${x.a}</td><td>${x.d}</td><td><button onclick="P.splice(${k},1);r()">Discharge</button></td></tr>`:'').join('')}
+function p(){if(n.value){P.push({n:n.value,a:a.value||'-',d:dr.value});n.value=a.value='';r()}}r()</script></body></html>

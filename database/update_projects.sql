@@ -1,0 +1,10 @@
+USE portfolio_db;
+UPDATE projects SET live_url='demos/orbit-commerce.html' WHERE title='Orbit Commerce';
+UPDATE projects SET live_url='demos/pulse-analytics.html' WHERE title='Pulse Analytics';
+UPDATE projects SET live_url='demos/helix-studio.html' WHERE title='Helix Studio Site';
+UPDATE projects SET live_url='demos/fieldnote.html' WHERE title='Fieldnote App';
+UPDATE projects SET live_url='demos/lumen-booking.html' WHERE title='Lumen Booking';
+UPDATE projects SET live_url='demos/medico-clinic.html' WHERE title='Medico Clinic Manager';
+UPDATE projects SET live_url='demos/cryptowatch.html' WHERE title='CryptoWatch Dashboard';
+UPDATE projects SET live_url='demos/inventra-stock.html' WHERE title='Inventra Stock System';
+UPDATE projects SET live_url='demos/aurora-3d.html' WHERE title='Aurora 3D Landing Page';

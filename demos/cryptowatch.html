@@ -1,0 +1,4 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="demo.css"><title>CryptoWatch</title></head><body><p class="top"><a href="../index.php#projects">← Back to portfolio</a><small>Demo</small></p>
+<h1>CryptoWatch</h1><p>Simulated live prices, updating every 2 seconds.</p><table><tr><th>Coin</th><th>Price</th><th>Change</th></tr><tbody id="l"></tbody></table>
+<script>const C={BTC:67000,ETH:3400,SOL:150,BNB:590,XRP:0.55};const O={...C};function u(){for(const k in C){C[k]*=1+(Math.random()-.5)*.01}
+l.innerHTML=Object.keys(C).map(k=>{const ch=(C[k]/O[k]-1)*100;return `<tr><td><b>${k}</b></td><td>$${C[k].toFixed(C[k]<1?4:2)}</td><td class="${ch>=0?'up':'dn'}">${ch>=0?'▲':'▼'} ${ch.toFixed(2)}%</td></tr>`}).join('')}u();setInterval(u,2000)</script></body></html>

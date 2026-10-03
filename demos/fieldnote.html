@@ -1,0 +1,4 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="demo.css"><title>Fieldnote</title></head><body><p class="top"><a href="../index.php#projects">← Back to portfolio</a><small>Demo</small></p>
+<h1>Fieldnote</h1><div class="row"><input id="i" placeholder="Write a note" style="flex:1"><button onclick="a()">Add note</button></div><div class="g" id="l"></div>
+<script>let N=JSON.parse(localStorage.fn||'[]');function r(){localStorage.fn=JSON.stringify(N);l.innerHTML=N.map((t,k)=>`<div class="c"><p>${t.replace(/</g,'&lt;')}</p><button onclick="N.splice(${k},1);r()">Delete</button></div>`).join('')||'<p>No notes yet.</p>'}
+function a(){if(i.value.trim()){N.unshift(i.value.trim());i.value='';r()}}i.onkeydown=e=>e.key==='Enter'&&a();r()</script></body></html>

@@ -1,0 +1,6 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="demo.css"><title>Pulse Analytics</title></head><body><p class="top"><a href="../index.php#projects">← Back to portfolio</a><small>Demo</small></p>
+<h1>Pulse Analytics</h1><div class="row"><select id="m"><option>Visits</option><option>Sales</option><option>Signups</option></select><button onclick="d()">Refresh data</button></div>
+<canvas id="c" width="880" height="320" style="width:100%;background:#0b1226;border-radius:14px"></canvas><p id="s"></p>
+<script>const x=c.getContext('2d');function d(){const v=Array.from({length:12},()=>20+Math.random()*80|0);x.clearRect(0,0,880,320);
+v.forEach((a,i)=>{x.fillStyle=i%2?'#8b5cff':'#22e3ff';x.fillRect(30+i*70,300-a*2.8,50,a*2.8);x.fillStyle='#8b97b8';x.fillText(a,40+i*70,292-a*2.8)});
+s.textContent=m.value+' — total '+v.reduce((a,b)=>a+b)+', average '+(v.reduce((a,b)=>a+b)/12|0)}m.onchange=d;d()</script></body></html>

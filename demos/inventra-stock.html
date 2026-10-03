@@ -1,0 +1,7 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="demo.css"><title>Inventra Stock System</title></head><body><p class="top"><a href="../index.php#projects">← Back to portfolio</a><small>Demo</small></p>
+<h1>Inventra Stock System</h1><p id="w"></p><div class="row"><input id="n" placeholder="New item"><input id="q" type="number" placeholder="Qty" style="width:90px"><button onclick="a()">Add item</button></div>
+<table><tr><th>Item</th><th>In stock</th><th></th></tr><tbody id="l"></tbody></table>
+<script>let S=JSON.parse(localStorage.is||'[{"n":"Notebook","q":40},{"n":"Pen box","q":6},{"n":"Stapler","q":12}]');
+function r(){localStorage.is=JSON.stringify(S);const low=S.filter(x=>x.q<=5).length;w.innerHTML=low?`<span class="dn">${low} item(s) low on stock</span>`:'<span class="up">All stock levels fine</span>';
+l.innerHTML=S.map((x,k)=>`<tr><td>${x.n.replace(/</g,'&lt;')}</td><td class="${x.q<=5?'dn':''}">${x.q}</td><td><button onclick="S[${k}].q++;r()">+ In</button> <button onclick="S[${k}].q=Math.max(0,S[${k}].q-1);r()">− Out</button></td></tr>`).join('')}
+function a(){if(n.value){S.push({n:n.value,q:+q.value||0});n.value=q.value='';r()}}r()</script></body></html>

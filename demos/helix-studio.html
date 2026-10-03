@@ -1,0 +1,9 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="demo.css"><title>Helix Studio</title></head><body><p class="top"><a href="../index.php#projects">← Back to portfolio</a><small>Demo</small></p>
+<h1>Helix Studio</h1><p>Move your mouse over the scene.</p>
+<style>.sc{perspective:800px;height:360px;display:grid;place-items:center}.cb{width:140px;height:140px;position:relative;transform-style:preserve-3d;animation:s 10s linear infinite}
+.cb i{position:absolute;inset:0;border:2px solid #22e3ff;background:rgba(34,227,255,.08);box-shadow:0 0 30px #22e3ff55 inset}
+.cb i:nth-child(1){transform:translateZ(70px)}.cb i:nth-child(2){transform:rotateY(180deg) translateZ(70px)}.cb i:nth-child(3){transform:rotateY(90deg) translateZ(70px)}
+.cb i:nth-child(4){transform:rotateY(-90deg) translateZ(70px)}.cb i:nth-child(5){transform:rotateX(90deg) translateZ(70px)}.cb i:nth-child(6){transform:rotateX(-90deg) translateZ(70px)}
+@keyframes s{to{transform:rotateX(360deg) rotateY(360deg)}}</style>
+<div class="sc" id="sc"><div class="cb"><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+<script>sc.onmousemove=e=>{const r=sc.getBoundingClientRect();sc.style.perspectiveOrigin=((e.clientX-r.left)/r.width*100)+'% '+((e.clientY-r.top)/r.height*100)+'%'}</script></body></html>
